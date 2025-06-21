@@ -219,7 +219,8 @@
                 <a href="#updates" class="nav-link text-text hover:text-accent transition">Updates</a>
                 <a href="#contact" class="nav-link text-text hover:text-accent transition">Contact</a>
             </div>
-            <button class="md:hidden text-text hover:text-accent transition">
+            <!-- IMPROVEMENT: Added aria-label for accessibility -->
+            <button class="md:hidden text-text hover:text-accent transition" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
@@ -320,7 +321,8 @@
                             
                             
                             <div class="mt-8">
-                                <a href="#" class="retro-btn px-6 py-2 rounded inline-flex items-center">
+                               
+                                <a href="https://drive.google.com/file/d/1rMe7oecp3YXLVCO88TC0z9QtnkSPT3hr/view?usp=drive_link" download class="retro-btn px-6 py-2 rounded inline-flex items-center">
                                     <span>Download CV</span>
                                     <i class="fas fa-download ml-2"></i>
                                 </a>
@@ -386,8 +388,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </section>
@@ -437,8 +437,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
                         </div>
                         
                         <div>
@@ -454,25 +452,25 @@
                                         class="w-full retro-input px-4 py-2 rounded">
                                 </div>
 
-                                <div>
+                                <div class="mt-4">
                                     <label for="email" class="block text-textSecondary text-sm mb-1">Your Email</label>
                                     <input type="email" id="email" name="email" required
                                         class="w-full retro-input px-4 py-2 rounded">
                                 </div>
 
-                                <div>
+                                <div class="mt-4">
                                     <label for="subject" class="block text-textSecondary text-sm mb-1">Subject</label>
                                     <input type="text" id="subject" name="subject" required
                                         class="w-full retro-input px-4 py-2 rounded">
                                 </div>
 
-                                <div>
+                                <div class="mt-4">
                                     <label for="message" class="block text-textSecondary text-sm mb-1">Message</label>
                                     <textarea id="message" name="message" rows="4" required
                                         class="w-full retro-input px-4 py-2 rounded"></textarea>
                                 </div>
 
-                                <div class="pt-2">
+                                <div class="pt-2 mt-4">
                                     <button type="submit" 
                                         class="retro-btn px-6 py-2 rounded inline-flex items-center">
                                         <span>Send Message</span>
@@ -480,7 +478,6 @@
                                     </button>
                                 </div>
                            </form>
-
                         </div>
                     </div>
                 </div>
@@ -509,13 +506,13 @@
             </div>
             
             <div class="mt-8 text-center text-textSecondary text-xs">
-                <p>© 2025 CyphrCookix. All rights reserved. | <a href="#" class="hover:text-accent transition">Privacy Policy</a></p>
+                 
+                <p>© 2024 CyphrCookix. All rights reserved. | Privacy Policy</p>
             </div>
         </div>
     </footer>
 
     <script>
-  
         document.addEventListener('DOMContentLoaded', () => {
             const terminalBody = document.querySelector('.terminal-body');
             terminalBody.scrollTop = terminalBody.scrollHeight;
@@ -531,25 +528,24 @@
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                  
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
+               
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, 
+                            behavior: 'smooth'
+                        });
                     }
-                    
-                  
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
                 }
             });
         });
         
-
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav .nav-link');
         
@@ -571,22 +567,21 @@
             });
         });
         
-       
-        
         const terminalInput = document.getElementById('terminal-input');
         const terminalOutput = document.getElementById('terminal-output');
 
         const commands = {
+            
             help: () => {
                 return `
                     <div class="text-text">
                         <p>Available commands:</p>
                         <ul class="list-disc pl-5 mt-2 space-y-1">
-                            <li><span class="command">whoami</span> - Brief intro about me.</li>
-                            <li><span class="command">about</span> - Learn more about me</li>
-                            <li><span class="command">updates</span> - Navigate to my projects and socials.</li>
-                            <li><span class="command">contact</span> - Navigate to the contact section.</li>
-                            <li><span class="command">clear</span> - Clear the terminal.</li>
+                            <li><span class="command">whoami</span>  - Display a brief introduction.</li>
+                            <li><span class="command">about</span>   - Navigate to the 'About Me' section.</li>
+                            <li><span class="command">updates</span> - Navigate to the 'Updates & Socials' section.</li>
+                            <li><span class="command">contact</span> - Navigate to the 'Contact' section.</li>
+                            <li><span class="command">clear</span>   - Clear the terminal screen.</li>
                         </ul>
                     </div>
                 `;
@@ -608,8 +603,8 @@
                 window.location.hash = 'updates';
                 return `<p class="text-text">Navigating to <span class="command">#updates</span> section...</p>`;
             },
+            
             clear: () => {
-            t
                 return ''; 
             }
         };
@@ -620,18 +615,15 @@
                 const terminalBody = terminalOutput.closest('.terminal-body');
                 terminalInput.value = '';
                 
-               
                 const commandDisplay = `<div class="mb-4"><span class="text-accent">$</span> <span class="command">${input}</span></div>`;
 
                 if (input === 'clear') {
                     terminalOutput.innerHTML = '';
                     return; 
                 }
-
-               
+                
                 terminalOutput.innerHTML = commandDisplay;
 
-               
                 if (input === 'contact') {
                     window.location.hash = 'contact';
                     terminalOutput.innerHTML += `<p class="text-text">Navigating to <span class="command">#contact</span> section...</p>`;
@@ -647,11 +639,9 @@
                     `;
                 }
                 
-                
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
         });
-
 
         document.querySelector('.terminal-body').addEventListener('click', () => {
             terminalInput.focus();
