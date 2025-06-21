@@ -601,11 +601,9 @@
                 `;
             },
             about: () => {
-               return `
-                    <div class="text-text">
-                        <p>I'm a developer and cybersecurity student working on tools, automation, and various tech projects. I’m currently studying digital infrastructure and also learning independently to improve my skills. My stack includes Python, scripting (Bash, PowerShell, CMD), web technologies (HTML, CSS, JavaScript), and tools like Docker, Git, and Notion, mainly on Windows and Linux. I focus on cybersecurity, automation, and troubleshooting.</p>
-                    </div>
-                `;
+                window.location.hash = 'about';
+                return `<p class="text-text">Navigating to <span class="command">#about</span> section...</p>`;
+            },
             updates: () => {
                 window.location.hash = 'updates';
                 return `<p class="text-text">Navigating to <span class="command">#updates</span> section...</p>`;
