@@ -450,27 +450,25 @@
                         <div>
                             <form action="mailto:hibaeljirari98@gmail.com" method="post" enctype="text/plain" class="space-y-4">
                             <div>
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+    <div>
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
         
+        <!-- This is your personal access key -->
         <input type="hidden" name="access_key" value="e4bde5df-580d-4ff2-8892-a51511bfdcd1">
 
-        <div class="mb-4">
-            <input type="text" id="name" name="name" class="w-full retro-input px-4 py-2 rounded" placeholder="Name" required>
-        </div>
+        <!-- Input for Name with placeholder -->
+        <input type="text" id="name" name="name" class="w-full retro-input px-4 py-2 rounded mb-4" placeholder="Name" required>
         
-        <div class="mb-4">
-            <input type="email" id="email" name="email" class="w-full retro-input px-4 py-2 rounded" placeholder="Email" required>
-        </div>
+        <!-- Input for Email with placeholder -->
+        <input type="email" id="email" name="email" class="w-full retro-input px-4 py-2 rounded mb-4" placeholder="Email" required>
         
-        <div class="mb-4">
-            <input type="text" id="subject" name="subject" class="w-full retro-input px-4 py-2 rounded" placeholder="Subject" required>
-        </div>
+        <!-- Input for Subject with placeholder -->
+        <input type="text" id="subject" name="subject" class="w-full retro-input px-4 py-2 rounded mb-4" placeholder="Subject" required>
         
-        <div class="mb-6">
-            <textarea id="message" name="message" rows="4" class="w-full retro-input px-4 py-2 rounded" placeholder="Message" required></textarea>
-        </div>
-        
-        <!-- Optional: Add a redirect URL for after the form is submitted -->
+        <!-- Textarea for Message with placeholder -->
+        <textarea id="message" name="message" rows="4" class="w-full retro-input px-4 py-2 rounded mb-4" placeholder="Message" required></textarea>
+
+        <!-- This will redirect the user to a success page after submitting -->
         <input type="hidden" name="redirect" value="https://web3forms.com/success">
         
         <button type="submit" class="retro-btn px-6 py-2 rounded flex items-center">
@@ -478,6 +476,7 @@
             <i class="fas fa-paper-plane ml-2"></i>
         </button>
     </form>
+</div>
 </div>
                             </form>
                         </div>
