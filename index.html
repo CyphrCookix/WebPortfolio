@@ -235,7 +235,7 @@
         </div>
     </div>
 
-    <!-- Main Content -->
+
     <main>
         <!-- Home Section -->
         <section id="home" class="min-h-screen flex items-center justify-center px-6 py-20">
@@ -445,42 +445,41 @@
                             <h3 class="text-xl text-accent mb-4">Send me an email</h3>
 
                            <form action="https://formspree.io/f/mnnvbrke" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    
-    <input type="hidden" name="_next" value="https://cyphrcookix.github.io/Cyphr-WebPortfolio/thanks.html">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://cyphrcookix.github.io/Cyphr-WebPortfolio/thanks.html">
 
-    <div>
-        <label for="name" class="block text-textSecondary text-sm mb-1">Your Name</label>
-        <input type="text" id="name" name="name" required 
-            class="w-full retro-input px-4 py-2 rounded">
-    </div>
+                                <div>
+                                    <label for="name" class="block text-textSecondary text-sm mb-1">Your Name</label>
+                                    <input type="text" id="name" name="name" required 
+                                        class="w-full retro-input px-4 py-2 rounded">
+                                </div>
 
-    <div>
-        <label for="email" class="block text-textSecondary text-sm mb-1">Your Email</label>
-        <input type="email" id="email" name="email" required
-            class="w-full retro-input px-4 py-2 rounded">
-    </div>
+                                <div>
+                                    <label for="email" class="block text-textSecondary text-sm mb-1">Your Email</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full retro-input px-4 py-2 rounded">
+                                </div>
 
-    <div>
-        <label for="subject" class="block text-textSecondary text-sm mb-1">Subject</label>
-        <input type="text" id="subject" name="subject" required
-            class="w-full retro-input px-4 py-2 rounded">
-    </div>
+                                <div>
+                                    <label for="subject" class="block text-textSecondary text-sm mb-1">Subject</label>
+                                    <input type="text" id="subject" name="subject" required
+                                        class="w-full retro-input px-4 py-2 rounded">
+                                </div>
 
-    <div>
-        <label for="message" class="block text-textSecondary text-sm mb-1">Message</label>
-        <textarea id="message" name="message" rows="4" required
-            class="w-full retro-input px-4 py-2 rounded"></textarea>
-    </div>
+                                <div>
+                                    <label for="message" class="block text-textSecondary text-sm mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" required
+                                        class="w-full retro-input px-4 py-2 rounded"></textarea>
+                                </div>
 
-    <div class="pt-2">
-        <button type="submit" 
-            class="retro-btn px-6 py-2 rounded inline-flex items-center">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane ml-2"></i>
-        </button>
-    </div>
-</form>
+                                <div class="pt-2">
+                                    <button type="submit" 
+                                        class="retro-btn px-6 py-2 rounded inline-flex items-center">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                           </form>
 
                         </div>
                     </div>
@@ -510,25 +509,23 @@
             </div>
             
             <div class="mt-8 text-center text-textSecondary text-xs">
-                <p>&copy; 2025 CyphrCookix. All rights reserved. | <a href="#" class="hover:text-accent transition">Privacy Policy</a></p>
+                <p>© 2025 CyphrCookix. All rights reserved. | <a href="#" class="hover:text-accent transition">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll terminal to bottom on load
+  
         document.addEventListener('DOMContentLoaded', () => {
-            const terminalOutput = document.getElementById('terminal-output');
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            const terminalBody = document.querySelector('.terminal-body');
+            terminalBody.scrollTop = terminalBody.scrollHeight;
         });
 
-        // Mobile menu toggle
         document.querySelector('button.md\\:hidden').addEventListener('click', function() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         });
         
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -537,13 +534,13 @@
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // Close mobile menu if open
+                  
                     const mobileMenu = document.getElementById('mobileMenu');
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
                     
-                    // Scroll to target
+                  
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -552,17 +549,15 @@
             });
         });
         
-        // Update active nav link on scroll
+
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('nav .nav-link');
         
         window.addEventListener('scroll', function() {
             let current = '';
             
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
                 if (pageYOffset >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
@@ -576,7 +571,8 @@
             });
         });
         
-        // Terminal command handling
+       
+        
         const terminalInput = document.getElementById('terminal-input');
         const terminalOutput = document.getElementById('terminal-output');
 
@@ -586,11 +582,11 @@
                     <div class="text-text">
                         <p>Available commands:</p>
                         <ul class="list-disc pl-5 mt-2 space-y-1">
-                            <li><span class="command">whoami</span> - Learn about my skills</li>
-                            <li><span class="command">about</span> - See my socials</li>
-                            <li><span class="command">contact</span> - Get in touch</li>
-                            <li><span class="command">games</span> - Show my info</li>
-                            <li><span class="command">clear</span> - Clear terminal</li>
+                            <li><span class="command">whoami</span> - Brief intro about me.</li>
+                            <li><span class="command">about</span> - Learn more about me</li>
+                            <li><span class="command">updates</span> - Navigate to my projects and socials.</li>
+                            <li><span class="command">contact</span> - Navigate to the contact section.</li>
+                            <li><span class="command">clear</span> - Clear the terminal.</li>
                         </ul>
                     </div>
                 `;
@@ -600,70 +596,63 @@
                     <div class="text-text">
                         <p class="text-2xl md:text-4xl font-bold mb-2">Hiba</p>
                         <p class="text-accent text-lg md:text-xl">Developer & Cybersecurity Student</p>
-                        <p class="text-textSecondary mt-4">Building secure and efficient digital solutions</p>
+                        <p class="text-textSecondary mt-4">Passionate about creating tools, automations, and practical tech solutions.</p>
                     </div>
                 `;
             },
             about: () => {
-                return `
-                    <div class="text-text">
-                        <p class="text-xl text-accent mb-2">About Me</p>
-                        <p class="mb-4">Hello! I'm Hiba, a passionate developer and cybersecurity student, driven by the power of AI and cutting-edge technology.</p>
-                        <p class="mb-4">I'm fascinated by how technology evolves and transforms our world, from simple automation scripts to complex neural networks. The intersection of cybersecurity and AI particularly excites me - where defense mechanisms meet machine learning.</p>
-                        <p class="mb-4">When I'm not coding or studying security vulnerabilities, you can find me exploring new tech stacks, contributing to open-source projects, or automating everything I can get my hands on.</p>
-                        <div class="mt-4">
-                            <p class="text-accent">Skills & Expertise:</p>
-                            <p class="text-textSecondary">Python, Automation Scripting, Bot Development, Basic Java, Networking, Cryptography</p>
-                            <p class="text-textSecondary mt-2">OS Proficiency: Windows, Arch Linux, Debian-based distros</p>
-                        </div>
-                    </div>
-                `;
+                window.location.hash = 'about';
+                return `<p class="text-text">Navigating to <span class="command">#about</span> section...</p>`;
+            },
+            updates: () => {
+                window.location.hash = 'updates';
+                return `<p class="text-text">Navigating to <span class="command">#updates</span> section...</p>`;
             },
             clear: () => {
-                return '';
+            t
+                return ''; 
             }
         };
 
         terminalInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                const input = terminalInput.value.trim();
+                const input = terminalInput.value.trim().toLowerCase();
+                const terminalBody = terminalOutput.closest('.terminal-body');
                 terminalInput.value = '';
                 
-                // Clear terminal and show new output
-                terminalOutput.innerHTML = `
-                    <div class="mb-4">
-                        <span class="text-accent">$</span> <span class="command">${input}</span>
-                    </div>
-                `;
-                
-                // Process command
-                if (commands[input]) {
+               
+                const commandDisplay = `<div class="mb-4"><span class="text-accent">$</span> <span class="command">${input}</span></div>`;
+
+                if (input === 'clear') {
+                    terminalOutput.innerHTML = '';
+                    return; 
+                }
+
+               
+                terminalOutput.innerHTML = commandDisplay;
+
+               
+                if (input === 'contact') {
+                    window.location.hash = 'contact';
+                    terminalOutput.innerHTML += `<p class="text-text">Navigating to <span class="command">#contact</span> section...</p>`;
+                } else if (commands[input]) {
                     const output = commands[input]();
-                    if (output) {
-                        terminalOutput.innerHTML += output;
-                    }
+                    terminalOutput.innerHTML += output;
                 } else if (input) {
                     terminalOutput.innerHTML += `
                         <div class="text-text">
-                            <p>Command not found: ${input}</p>
-                            <p>Type <span class="command">help</span> for available commands</p>
+                            <p>Command not found: <span class="text-red-400">${input}</span></p>
+                            <p>Type <span class="command">help</span> for a list of available commands.</p>
                         </div>
                     `;
                 }
                 
-                // Always show welcome message at bottom
-                terminalOutput.innerHTML += `
-                    <div class="mt-6 text-textSecondary">
-                        <p>Type <span class="command">'help'</span> to see available commands</p>
-                    </div>
-                `;
                 
-                // Scroll to bottom
-                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                terminalBody.scrollTop = terminalBody.scrollHeight;
             }
         });
 
-        // Focus input on terminal click
+
         document.querySelector('.terminal-body').addEventListener('click', () => {
             terminalInput.focus();
         });
