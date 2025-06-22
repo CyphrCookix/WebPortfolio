@@ -1,1 +1,1 @@
-https://cyphrcookix.github.io/Cyphr-WebPortfolio/
+https://cyphrcookix.github.io/WebPortfolio/
